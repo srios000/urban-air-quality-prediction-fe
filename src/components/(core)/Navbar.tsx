@@ -7,6 +7,7 @@ import {
   History,
   BookOpen,
   CloudSun,
+  HeartPulse,
   MapIcon,
   Info,
   Wind
@@ -17,6 +18,7 @@ export default function Navbar() {
     { id: 'home', label: 'Home', href: '/', icon: Home },
     // { id: 'dashboard', label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
     { id: 'predictions', label: 'Predictions', href: '/predictions', icon: CloudSun },
+    { id: 'health-impact', label: 'Health Impact', href: '/health-impact', icon: HeartPulse },
     { id: 'history', label: 'History', href: '/history', icon: History },
     { id: 'map', label: 'Map', href: '/map', icon: MapIcon },
     { id: 'about', label: 'About', href: '/about', icon: Info },

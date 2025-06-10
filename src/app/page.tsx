@@ -1,5 +1,5 @@
 "use client"
-import { ArrowRight, Activity, ShieldCheck, Brain, Sparkles, MapPin, TrendingUp, BarChartHorizontalBig, UserCheck, SlidersHorizontal, Wind, Search } from 'lucide-react';
+import { ArrowRight, Activity, ShieldCheck, Brain, Sparkles, MapPin, TrendingUp, BarChartHorizontalBig, UserCheck, SlidersHorizontal, Wind, Search, HeartPulse } from 'lucide-react';
 import Link from 'next/link';
 
 const FeatureCard = ({ icon, title, description, link, linkText = "Learn More" }: { icon: React.ReactNode, title: string, description: string, link?: string, linkText?: string }) => (
@@ -135,10 +135,12 @@ export default function EnhancedHomePage() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <ComingSoonFeatureCard
-              icon={<UserCheck className="h-10 w-10 text-teal-500 mb-2" />}
+            <FeatureCard
+              icon={<HeartPulse className="h-10 w-10 text-green-500 mb-2" />}
               title="Personal Health Impact Calculator"
               description="Understand how current and predicted air quality specifically affects you based on your age, health conditions, and exposure time. Get tailored recommendations."
+              link="/health-impact"
+              linkText="Check out the new feature!"
             />
             <ComingSoonFeatureCard
               icon={<SlidersHorizontal className="h-10 w-10 text-indigo-500 mb-2" />}
