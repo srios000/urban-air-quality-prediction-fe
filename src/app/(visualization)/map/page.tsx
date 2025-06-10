@@ -10,7 +10,7 @@ export default function MapVisualizationPage() {
         <div className="max-w-6xl mx-auto space-y-6 text-center py-10">
           <h1 className="text-4xl font-bold text-red-700 dark:text-red-400">Configuration Error</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            Google Maps API key is not configured. Please set the Maps_API_KEY environment variable.
+            Google Maps API key is not configured. Please set the GOOGLE_MAPS_API_KEY environment variable.
           </p>
         </div>
       </div>
