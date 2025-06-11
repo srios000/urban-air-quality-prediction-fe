@@ -20,15 +20,15 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/api/be/:path*",
-        destination: "http://127.0.0.1:8001/api/:path*",
+        destination: "https://uaqcp-lai25-rm094.up.railway.app/api/:path*",
       },
       {
         source: "/openapi.json",
-        destination: "http://127.0.0.1:8001/openapi.json",
+        destination: "https://uaqcp-lai25-rm094.up.railway.app/openapi.json",
       },
       {
         source: "/redoc",
-        destination: "http://127.0.0.1:8001/redoc",
+        destination: "https://uaqcp-lai25-rm094.up.railway.app/redoc",
       },
     ];
   },
