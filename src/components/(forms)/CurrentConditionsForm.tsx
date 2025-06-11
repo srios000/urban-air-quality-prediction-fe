@@ -96,6 +96,7 @@ export default function CurrentConditionsForm({ onCurrentConditionsResult }: Cur
           language_code: 'en'
         })
       })
+      console.log('API_URL:', API_URL)
 
       if (!response.ok) {
         throw new Error('Network response was not ok')
