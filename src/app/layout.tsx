@@ -4,7 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/(utility)/themeProvider";
 import Navbar from "@/components/(core)/Navbar";
 import Footer from "@/components/(core)/Footer";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
+import MaintenancePage from "@/components/(core)/Maintenance";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +22,8 @@ export const metadata: Metadata = {
   description: "Predict air quality based on pollutant data or get current conditions by location",
 };
 
+const UNDER_MAINTENANCE = process.env.MAINTENANCE_MODE
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,11 +36,17 @@ export default function RootLayout({
       >
         <Toaster />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar/>
-          <main>
-            {children}
-          </main>
-          <Footer />
+          {UNDER_MAINTENANCE ? (
+            <MaintenancePage />
+          ) : (
+            <>
+              <Navbar />
+              <main>
+                {children}
+              </main>
+              <Footer />
+            </>
+          )}
         </ThemeProvider>
       </body>
     </html>
