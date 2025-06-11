@@ -13,7 +13,7 @@ interface CurrentConditionsFormProps {
   onCurrentConditionsResult: (data: CurrentConditionsData) => void
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://uaqcp-lai25-rm094.up.railway.app';
+const API_URL = 'https://uaqcp-lai25-rm094.up.railway.app';
 
 export default function CurrentConditionsForm({ onCurrentConditionsResult }: CurrentConditionsFormProps) {
   const [isLoading, setIsLoading] = useState(false)
