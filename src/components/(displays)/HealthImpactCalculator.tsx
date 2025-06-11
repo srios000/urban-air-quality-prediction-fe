@@ -67,7 +67,7 @@ const initialFormData: HealthImpactFormData = {
   countryName: '',
 };
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8001';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://uaqcp-lai25-rm094.up.railway.app';
 
 
 export default function HealthImpactCalculator() {

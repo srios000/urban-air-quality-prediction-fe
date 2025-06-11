@@ -26,6 +26,8 @@ const initialFormData = {
   co: ''
 }
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://uaqcp-lai25-rm094.up.railway.app';
+
 export default function PollutantForm({ onPredictionResult }: PollutantFormProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [autoFill, setAutoFill] = useState(true)
@@ -234,7 +236,7 @@ export default function PollutantForm({ onPredictionResult }: PollutantFormProps
         if (formData.co.trim()) requestData.co = parseFloat(formData.co)
       }
 
-      const response = await fetch('/api/be/v1/predictions', {
+      const response = await fetch(`${API_URL}/api/v1/predictions/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -13,6 +13,8 @@ interface CurrentConditionsFormProps {
   onCurrentConditionsResult: (data: CurrentConditionsData) => void
 }
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://uaqcp-lai25-rm094.up.railway.app';
+
 export default function CurrentConditionsForm({ onCurrentConditionsResult }: CurrentConditionsFormProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [showMapPicker, setShowMapPicker] = useState(false)
@@ -83,7 +85,7 @@ export default function CurrentConditionsForm({ onCurrentConditionsResult }: Cur
 
     setIsLoading(true)
     try {
-      const response = await fetch('/api/be/v1/current-conditions', {
+      const response = await fetch(`${API_URL}/api/be/v1/current-conditions`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
