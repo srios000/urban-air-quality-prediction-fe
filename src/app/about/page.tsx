@@ -78,7 +78,7 @@ export default function AboutPage() {
     {
       icon: <BarChart3 className="w-6 h-6" />,
       title: "Interactive Visualization",
-      description: "Real-time air quality monitoring with interactive maps"
+      description: "Air quality monitoring with interactive maps"
     },
     {
       icon: <Database className="w-6 h-6" />,
