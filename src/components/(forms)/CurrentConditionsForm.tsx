@@ -85,7 +85,7 @@ export default function CurrentConditionsForm({ onCurrentConditionsResult }: Cur
 
     setIsLoading(true)
     try {
-      const response = await fetch(`${API_URL}/api/be/v1/current-conditions`, {
+      const response = await fetch(`${API_URL}/api/v1/current-conditions`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
