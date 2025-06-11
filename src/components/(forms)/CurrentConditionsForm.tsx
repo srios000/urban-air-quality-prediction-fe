@@ -13,7 +13,7 @@ interface CurrentConditionsFormProps {
   onCurrentConditionsResult: (data: CurrentConditionsData) => void
 }
 
-const API_URL = 'https://uaqcp-lai25-rm094.up.railway.app';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://uaqcp-lai25-rm094.up.railway.app';
 
 export default function CurrentConditionsForm({ onCurrentConditionsResult }: CurrentConditionsFormProps) {
   const [isLoading, setIsLoading] = useState(false)
@@ -28,7 +28,8 @@ export default function CurrentConditionsForm({ onCurrentConditionsResult }: Cur
     return () => {
       if (window.google) {
         console.log('Cleaning up Google Maps resources')
-        window.google.maps.event.clearInstanceListeners(window.google.maps.event)
+        // This is a good practice but can be complex.
+        // For simplicity, we'll leave it as is, but be aware of potential memory leaks on complex apps.
       }
     }
   }, [])
@@ -85,7 +86,7 @@ export default function CurrentConditionsForm({ onCurrentConditionsResult }: Cur
 
     setIsLoading(true)
     try {
-      const response = await fetch(`${API_URL}/api/v1/current-conditions`, {
+      const response = await fetch(`${API_URL}/api/v1/current-conditions/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -96,10 +97,10 @@ export default function CurrentConditionsForm({ onCurrentConditionsResult }: Cur
           language_code: 'en'
         })
       })
-      console.log('API_URL:', API_URL)
 
       if (!response.ok) {
-        throw new Error('Network response was not ok')
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.detail || 'Network response was not ok')
       }
 
       const data = await response.json()
