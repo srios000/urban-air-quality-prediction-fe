@@ -19,9 +19,6 @@ export default function MapVisualizationPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 p-4">
-      <div className="mt-4 mr-3 flex justify-end">
-        <ThemeToggle />
-      </div>
       <div className="max-w-7xl mx-auto space-y-6 py-8">
         <div className="text-center space-y-2 mb-8">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white">

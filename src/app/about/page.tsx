@@ -98,10 +98,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 p-4">
-      <div className="mt-4 mr-3 flex justify-end">
-        <ThemeToggle />
-      </div>
-
       <div className="max-w-6xl mx-auto space-y-8 py-8">
         <div className="text-center space-y-4">
           <h1 className="text-5xl font-bold text-gray-900 dark:text-white">
