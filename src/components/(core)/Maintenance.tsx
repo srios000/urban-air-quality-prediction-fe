@@ -5,7 +5,7 @@ import {
   Clock,
   Sparkles,
   Activity,
-  ShieldCheck,
+  CircleDotDashedIcon,
   RefreshCw,
   AlertCircle,
   CheckCircle2,
@@ -303,17 +303,17 @@ export default function MaintenancePage() {
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               <MaintenanceTask
-                icon={<ShieldCheck className="h-10 w-10 text-emerald-500" />}
-                title="Security Updates"
-                status="completed"
-                description="Enhanced security protocols and vulnerability patches have been applied."
-              />
-              {/* Some Exmaples /}
-              {/ <MaintenanceTask
                 icon={<CircleDotDashedIcon className="h-8 w-8 text-blue-500" />}
                 title="Daily Maintenance"
                 status="in-progress"
                 description="We want to make sure you have the best performance from our app"
+              />
+              {/* Some Exmaples /}
+              {/ <MaintenanceTask
+                icon={<ShieldCheck className="h-10 w-10 text-emerald-500" />}
+                title="Security Updates"
+                status="completed"
+                description="Enhanced security protocols and vulnerability patches have been applied."
               />
               <MaintenanceTask
                 icon={<Activity className="h-8 w-8 text-blue-500" />}
